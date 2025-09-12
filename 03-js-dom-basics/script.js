@@ -14,8 +14,8 @@ const images = [
 
 function BackgroundChange(){
 
-    differentIndex = Math.floor(Math.random() * backgroundImages.length);
-    randomImage = backgroundImages[randomImage];
+    differentIndex = Math.floor(Math.random() * images.length);
+    randomImage = images[differentIndex];
     bodyElement.style.backgroundImages = `url('${randomImage}')`;
 
 }
