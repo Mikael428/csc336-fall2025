@@ -14,13 +14,10 @@ const images = [
 
 function BackgroundChange(){
 
-differentIndex = Math.floor(Math.random() * backgroundImages.length);
-randomImage = backgroundImages[randomImage];
-
-bodyElement.style.backgroundImages = `url('${randomImage}')`;
+    differentIndex = Math.floor(Math.random() * backgroundImages.length);
+    randomImage = backgroundImages[randomImage];
+    bodyElement.style.backgroundImages = `url('${randomImage}')`;
 
 }
 
-function buttonClicked(){
-    BackgroundChange();
-}
+BackgroundChange();
