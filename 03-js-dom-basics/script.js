@@ -18,6 +18,7 @@ function BackgroundChange(){
     const differentIndex = Math.floor(Math.random() * images.length);
     const randomImage = images[differentIndex];
     document.body.style.backgroundImage = `url('${randomImage}')`;
+
     characterNameElement.textContent = randomImage.name;
 }
 
