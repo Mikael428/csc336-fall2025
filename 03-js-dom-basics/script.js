@@ -11,13 +11,14 @@ const images = [
     {url: 'https://th.bing.com/th/id/R.4405134d45d2d6d145e59df0ba59cb48?rik=Oq1aVkJRnLTqBA&riu=http%3a%2f%2fimages.shoutwiki.com%2ffamilyguy%2fthumb%2fd%2fdf%2fChris_Griffin.png%2f1200px-Chris_Griffin.png&ehk=nTTuVIWMJhyXpKghtpHUQCVFb0lPHnH7LIBXnbU9Tj0%3d&risl=&pid=ImgRaw&r=0', name: "Chris Griffin"}
 ];
 
-const characterNameElement = document.getElementById('character-name');
+const characterNameElement = document.getElementById('Character Name');
 
 function BackgroundChange(){
 
     const differentIndex = Math.floor(Math.random() * images.length);
     const randomImage = images[differentIndex];
-    document.body.style.backgroundImage = `url('${randomImage}')`;
+
+    document.body.style.backgroundImage = `url('${randomImage.url}')`;
 
     characterNameElement.textContent = randomImage.name;
 }
