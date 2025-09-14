@@ -1,11 +1,10 @@
 .boxes{
     background-color: white;
-    padding: 50px;
-    margin: 50px;
+    padding: 20px;
+    margin: 20px;
     border-radius: 15px;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    transition: background-image 0.5s ease-in-out;
     text-align: center;
 }
 
@@ -15,5 +14,9 @@
     margin: 15px;
     border-radius: 5px;
     font-size: 20px;
+    text-align: center;
+}
+
+.boxed{
     text-align: center;
 }
