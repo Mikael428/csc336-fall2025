@@ -11,7 +11,7 @@ const images = [
     {url: 'https://tse4.mm.bing.net/th/id/OIP.8qFRPyVVmlwgZJc8IRZ7nQAAAA?r=0&cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3', name: 'Meg Griffin'},
     {url: 'https://th.bing.com/th/id/R.4405134d45d2d6d145e59df0ba59cb48?rik=Oq1aVkJRnLTqBA&riu=http%3a%2f%2fimages.shoutwiki.com%2ffamilyguy%2fthumb%2fd%2fdf%2fChris_Griffin.png%2f1200px-Chris_Griffin.png&ehk=nTTuVIWMJhyXpKghtpHUQCVFb0lPHnH7LIBXnbU9Tj0%3d&risl=&pid=ImgRaw&r=0', name: "Chris Griffin"}
 ];''
-const characterNameElement = document.getElementById('Character Name');
+
 
 function BackgroundChange(){
 
@@ -20,7 +20,26 @@ function BackgroundChange(){
 
     document.body.style.backgroundImage = `url('${randomImage.url}')`;
 
-    characterNameElement.textContent = randomImage.name;
+    document.body.style.backgroundRepeat = 'repeat';
+
+    const oldElement = document.querySelector('#picture-info');
+    if (oldElement) {
+        oldElement.remove();
+    }
+
+
+    const newElement = document.createElement('div');
+    newElement.id = 'picture-info';
+    newElement.style.color = 'red';
+    newElement.textContent = `Picture: ${randomImage.name}`;
+    newElement.style.backgroundColor = 'aqua';
+
+    document.body.appendChild(newElement);
+
+
+
 }
+
+
 
 BackgroundChange();
