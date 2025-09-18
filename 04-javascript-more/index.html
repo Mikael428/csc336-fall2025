@@ -2,7 +2,6 @@
 
 <head>
     <title>9-16-25</title>
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,26 +9,33 @@
 <h1>Guestbook</h1>
 <h2>Please, sign here: </h2>
 
-<form id="Signing field">
+<form id="Form">
     <div class="form-field">
-        <label id="name">Name: </label>
-        <input type="text" id="name" name="name" required>
+        <label id="name-input">Name: </label>
+        <input type="text" id="name" required>
     </div>
     <div class="form-field">
-        <label id="colored">Favorite Color: </label>
-        <input type="text" id="colored" name="colored" required>
+        <label id="color-input">Favorite Color: </label>
+        <input type="text" id="colored" required>
     </div>
     <div class="form-field">
-        <label id="message">Message: </label>
-        <input type="text" id="message" name="message" required>
+        <label id="message-input">Message: </label>
+        <input type="text" id="message" required>
     </div>
+    <p id="math-problem-text">Answer this Math Problem: </p>
+
     <div class="form-field">
-        <label id="math"></label>
-        <input type="text" id="answer" name="math" required>
+        <label id="math-input">Answer: </label>
+        <input type="number" id="mathInput" required>
     </div>
-        <button type="submit">Submit: </button>
-</div>
+    <p id ="validationError" style="color: red";></p>
+    <div class="btn"><button type ="submit">Submit: </button>
 </form>
+<div id="List">
+</div>
+
+</div>
+    <script src="script.js" defer></script>
 </body>
 </html>
 
