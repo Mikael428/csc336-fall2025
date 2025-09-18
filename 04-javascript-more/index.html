@@ -1,43 +1,31 @@
 <html>
+    <head>
+        <title>GuestBook</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-<head>
-    <title>9-16-25</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="container">
-<h1>Guestbook</h1>
-<h2>Please, sign here: </h2>
+    <div class="container">
+        <h1>Signing Board</h1>
+        <form id="guestForm">
+            <div class="form=input">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" required>
+            </div>
 
-<form id="Form">
-    <div class="form-field">
-        <label id="name-input">Name: </label>
-        <input type="text" id="name" required>
-    </div>
-    <div class="form-field">
-        <label id="color-input">Favorite Color: </label>
-        <input type="text" id="colored" required>
-    </div>
-    <div class="form-field">
-        <label id="message-input">Message: </label>
-        <input type="text" id="message" required>
-    </div>
-    <p id="math-problem-text">Answer this Math Problem: </p>
+            <div class="form=input">
+                <label for="message">Message: </label>
+                <input type="message" id="message" name="name" required>
+            </div>
 
-    <div class="form-field">
-        <label id="math-input">Answer: </label>
-        <input type="number" id="mathInput" required>
-    </div>
-    <p id ="validationError" style="color: red";></p>
-    <div class="btn"><button type ="submit">Submit: </button>
-</form>
-<div id="List">
-</div>
+            <div class="form=input">
+                <label for="color">Favorite Color: </label>
+                <input type="color" id="color" name="name" required>
+            </div>
 
-</div>
+            <div class="btn"><button type="submit">Submit: </button></div>
+
+        </form>
+        <div id ="GuestList"></div>
+    </div>
     <script src="script.js" defer></script>
-</body>
 </html>
-
-
-
