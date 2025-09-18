@@ -1,16 +1,16 @@
 body {
-    background-color: blue;
+    background-color: whitesmoke;
     justify-content: center;
     display: flex;
-    align-items: center;
-    height: 100vh;
+    align-items: left top;
+    height: 39vh;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .container{
     width: 500px;
     padding: 20px;
-    background-color: aliceblue;
+    background-color: gray;
 }
 
 .container h1 {
