@@ -49,4 +49,3 @@ guestForm.addEventListener("submit", function(e) {
         mathInput.value = "";
     }
 });
-
