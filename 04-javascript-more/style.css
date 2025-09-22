@@ -11,6 +11,9 @@ body {
     width: 500px;
     padding: 20px;
     background-color: gray;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .container h1 {
@@ -61,4 +64,5 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
