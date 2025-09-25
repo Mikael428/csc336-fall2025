@@ -1,0 +1,54 @@
+.container{
+    max-width: 600px;
+    background-color: aliceblue;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: right;
+}
+
+
+
+
+.container{
+    max-width: 600px;
+    background-color: aliceblue;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.micromodal-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.micromodal-slide .modal__overlay {
+    background-color: violet;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+    animation: slide-in .5s ease-out;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
