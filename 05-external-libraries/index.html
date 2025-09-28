@@ -3,42 +3,85 @@
         <title>Resturant</title>
         <link rel="stylesheet" href="style.css">
     </head>
+    <body>
 
+    <div class="containered">
     <p>Welcome, our resturant has the best pizzas around. Any kind of flavor, we'll make for ya!
-    Doesn't matter how horrible it sounds, we'll still make it happen.
+    Doesn't matter how horrible it sounds, we'll still make it happen. 
     </p>
-    <div class="hours">
-        <h1>Opening Hours: </h1>
-        <p>Mon: 10am - 10pm </p>
-        <p>Tue: 10am - 10pm </p>
-        <p>Wed: 10am - 10pm </p>
-        <p>Thu: 10am - 10pm </p>
-        <p>Fri: 10am - 1am </p>
-        <p>Sat: 10am - 1am </p>
-        <p>Sun: 12pm - 8pm </p>
     </div>
+    
 
     <div class="container">
-        <h1>Menu: </h1>
-        <p>12" Inch: $9.99 </p>
-        <p>8" Inch: $7.99 </p>
-        <p>6" Inch: $4.99 </p>
-        <p>4" Inch: $2.99 </p>
-
-        <h2>Toppings: </h2>
-        <p>Pepperoni, Jalepenos, Susuage </p>
-        
-
+        <section id="menu" class="menu-area">
+        <h2>Menu: </h2>
+        <div class="menu-items">
+        <ul>
+        <li><span class="size">12" Inch: </span> 
+        <span class="price">$9.99 </span>
+        <li><span class="size">8" Inch: </span> 
+        <span class="price">$7.99 </span>
+        <li><span class="size">6" Inch: </span> 
+        <span class="price">$4.99 </span>
+        <li><span class="size">4" Inch: </span> 
+        <span class="price">$2.99 </span>
+        </ul>
     </div>
 
+    <div class="menu-items">
+        <h3>Toppings: </h3>
+        <p>Pepperoni, Jalepenos, Susuage -- 
+            Not alot but it's all we have -- 
+            Prices stay the Same with one topping but add another and it's another $.99 </p>
+    </div>
+    </section>
+
+    <div class="hours">
+        <h2>Opening Hours: </h2>
+        <li><span class="day">Mon - Thu: </span> <span class="time">10am - 10pm</span></li>
+        <li><span class="day">Fri - Sat: </span> <span class="time">10am - 1am</span></li>
+        <li><span class="day">Sun: </span> <span class="time">12pm - 8pm</span></li>
+    </div>
+
+    <br>
+<button id="show-toast-btn">Show Info</button>
 
 
-<button data-micromodal-trigger="pizza-modal">View Special Offer</button>
 
 <div class="modal micromodal-slide" id="pizza-modal" aria-hidden="true">
 <div class="modal__overlay" tabindex="-1" data-micromodal-close>
 <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="pizza-modal-title">
+<header class="modal__header">
+    <h2 class="modal__title" id="pizza-modal-title">Today's Special: </h2>
+</header>
 <div class="modal__content" id="pizza-modal-content">
+    <p>
+        <span id="typed-text"></span>
+    </p>
+</div>
+</div>
+</div>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/micromodal@0.4.10/dist/micromodal.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script src="script.js"></script>
+
+
+<div id="pop up" class="pop-hidden">
+    Buy a Pizza PLEASE!!
+</div>
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script>
+    document.getElementById('show-toast-btn').addEventListener('click', function() {
+        Toastify({
+            text: "BUY THE PIZZA",
+            duration: 3000
+        }).showToast();
+    });
+</script>
+</body>
+</html>

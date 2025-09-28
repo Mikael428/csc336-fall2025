@@ -1,54 +1,81 @@
-.container{
-    max-width: 600px;
-    background-color: aliceblue;
-    padding: 40px;
-    border-radius: 10px;
-    text-align: right;
-}
-
-
 
 
 .container{
-    max-width: 600px;
+    max-width: 1400px;
     background-color: aliceblue;
     padding: 40px;
     border-radius: 10px;
     text-align: center;
 }
 
-.micromodal-slide {
+.containered{
+    max-width: 1400px;
+    background-color: wheat;
+    padding: 40px;
+    border-radius: 10px;
+    max-height: 50px;
+    text-align: center;
+}
+
+.menu-area ul, .hours {
+    background: aliceblue;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.menu-area li, .hours li {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    background: red;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+.hours {
+    font-weight: bold;
+    color: pink;
+}
+
+#pop-up {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: antiquewhite;
+    color: aqua;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 9999;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
 }
 
-.micromodal-slide .modal__overlay {
-    background-color: violet;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+#pop-up.show{
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-.micromodal-slide[aria-hidden="false"] .modal__container {
-    animation: slide-in .5s ease-out;
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
 }
 
-@keyframes slide-in {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
 }
+
+
+
+body {
+    background-image: url('https://tse3.mm.bing.net/th/id/OIP.gNpN155kcshoTUgHDjqu7wHaE8?rs=1&pid=ImgDetMain&o=7&rm=3');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
