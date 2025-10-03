@@ -16,10 +16,14 @@ try {
     const postTitle = data.title;
     const userId = data.userID;
 
-    container.innerHTML = 
+    container.innerHTML = `
+    <h3>${postTitle}</h3>
+    <p><strong>Post ID:</strong> ${data.id}</p>
+    <p><strong>User ID:</strong> ${userId}</p>
+    `;
 }
 
 catch (error) {
     console.error('Error:', error);
-    container.innerHTML = '<p style="color: red;">Failed to load post data. Error: ${error.message}</p>';
+    container.innerHTML = `<p style="color: red;">Failed to load post data. Error: ${error.message}</p>`;
 }
