@@ -1,29 +1,53 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 15px;
-    color: aliceblue;
+    color: black;
     background-color: antiquewhite;
 }
 
 header {
     text-align: center;
+    background-color: lavender;
     padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rbga(0,0,0,0.1);
+    transition: background-color 0.5s ease;
 }
 
-button {
+h1{
+    color: blue;
+}
+
+#fetch-button {
     padding: 10px 20px;
-    background-color: beige;
-    color: wheat;
+    background-color: #007bff;
+    color: white;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.1em;
     transition: background-color 0.3s;
 }
 
+#fetch-button:disabled{
+    background-color: #ccc;
+    color: #665;
+    cursor: not-allowed;
+}
 section {
     padding: 20px;
     margin-bottom: 20px;
+    background-color: white;
     border: 1px solid wheat;
     border-radius: 8px;
     background-color: burlywood;
+}
+
+.status-message{
+    color: #665;
+    font-size: 0.9em;
+    margin-top: 15px;
+    border-top: 1px dashed #eee;
+    padding-top: 5px;
 }
