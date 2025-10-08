@@ -19,8 +19,8 @@ try {
     const punchline = data.punchline;
 
     container.innerHTML = `
-    <p><strong>Post ID:</strong> ${setup}</p>
-    <p><strong>User ID:</strong> ${punchline}</p>
+    <p><strong>Setup:</strong> ${setup}</p>
+    <p><strong>Punchline:</strong> ${punchline}</p>
     `;
 
     container.style.borderLeft = '5px solid #ffc107';
