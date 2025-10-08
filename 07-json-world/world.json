@@ -1,0 +1,29 @@
+{
+    "regions": [
+        {
+            "name": "Norwood",
+            "climate": "cool",
+            "towns": [
+                {
+                    "name": "Germantown",
+                    "population": 15500,
+                    "notable_people": [
+                        {
+                            "name": "Michael Woods",
+                            "role": "Actor",
+                            "items": [
+                                "Belly Bag",
+                                {
+                                    "name": "Bellby",
+                                    "rarity": "Uncommon",
+                                    "effect": "Protection"
+                                }
+
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
