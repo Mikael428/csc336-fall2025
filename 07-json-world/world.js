@@ -31,3 +31,16 @@ async function processData() {
         } else {
             console.log("Empty.");
         }
+    } catch (error) {
+        if (error.code === 'ENOENT') {
+            console.error("Error: File not found on ${filePath}.");
+        } else if (error instanceof SyntaxError) {
+            console.error("Error: Could not parse JSON.");
+        } else {
+            console.error("An error occurred:", error.message);
+        }
+    }
+
+}
+
+processData();
