@@ -14,14 +14,11 @@ async function processData() {
             const namestoknow = [];
 
             for (const region of worldData.regions) {
-                if (region.namestoknow && Array.isArray(region.namestoknow)) {
-                    for (const person of region.namestoknow) {
-                        if (person.name) {
+                if (region.towns && Array.isArray(region.towns)) {
                             namestoknow.push(person.name);
                         }
                     }
-                }
-            }
+
             if (namestoknow.length > 0) {
                 console.log(namestoknow.join('\n'));
             } else {
@@ -33,7 +30,7 @@ async function processData() {
         }
     } catch (error) {
         if (error.code === 'ENOENT') {
-            console.error("Error: File not found on ${filePath}.");
+            console.error(`Error: File not found on ${filePath}.`);
         } else if (error instanceof SyntaxError) {
             console.error("Error: Could not parse JSON.");
         } else {
