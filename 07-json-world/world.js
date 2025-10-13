@@ -15,7 +15,7 @@ async function processData() {
 
             for (const region of worldData.regions) {
                 if (region.towns && Array.isArray(region.towns)) {
-                            namestoknow.push(region.towns);
+                            namestoknow.push(...region.towns);
                         }
                     }
 
