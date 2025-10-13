@@ -1,11 +1,11 @@
-import {readfile} from 'fs/promises';
+import {readFile} from 'fs/promises';
 import {resolve} from 'path';
 
 const filePath = resolve('world.json');
 
 async function processData() {
     try {
-        const fileData = await readfile(filePath, {encoding: 'utf8'});
+        const fileData = await readFile (filePath, {encoding: 'utf8'});
         const worldData = JSON.parse(fileData);
 
         if (worldData && Array.isArray(worldData.regions)) {
