@@ -15,7 +15,7 @@ async function processData() {
 
             for (const region of worldData.regions) {
                 if (region.towns && Array.isArray(region.towns)) {
-                            namestoknow.push(person.name);
+                            namestoknow.push(region.towns);
                         }
                     }
 
@@ -28,6 +28,7 @@ async function processData() {
         } else {
             console.log("Empty.");
         }
+
     } catch (error) {
         if (error.code === 'ENOENT') {
             console.error(`Error: File not found on ${filePath}.`);
