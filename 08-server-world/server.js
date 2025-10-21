@@ -34,9 +34,7 @@ app.post('/update', (req, res) => {
         console.error("Failed to parse", parseError);
         return res.status(500).json({error: 'Existing data is not available'});
     }
-    }
-    )
-})
+    
 
 const updatedClient = req.body;
 
@@ -51,8 +49,10 @@ fs.writeFile(WORLD_FILE, updatedClient, (writeErr) => {
     }
     res.status(200).json(worldDataNew);
 });
+    });
+});
 
 app.listen(PORT, () => {
     console.log(`Server Running at http://localhost${PORT}`);
     console.log(`Static files...`);
-})
+});
