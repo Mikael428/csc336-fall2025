@@ -38,6 +38,19 @@ app.post('/update', (req, res) => {
 
 const updatedClient = req.body;
 
+if (updatedClient.action === 'add' && 'add_inhabitant' && updatedClient.name && updatedClient.role) {
+    const newInhab = {
+        name: updatedClient.name,
+        role: updatedClient.role,
+        item: updatedClient.item
+    };
+    if (Array.isArray(worldData.inhabitants)) {
+        worldData.inhabitants.push(newInhab);
+    } else {
+        worldData.inhabitants = [newInhab];
+    }
+}
+
 const worldDataNew = Object.assign({}, worldData, updatedClient);
 
 const Jsonupdated = JSON.stringify(worldDataNew, null, 2);
