@@ -42,6 +42,6 @@ export default function Page() {
         
         </div>
         
-        )}
+        )};
 
-<><link rel="stylesheet" href="style.css"></link><script src="script.js" defer></script></>
+<><link rel="stylesheet" href="style.css"></link><script src="script.js" defer></script></>;
