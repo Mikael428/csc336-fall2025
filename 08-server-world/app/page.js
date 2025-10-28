@@ -1,6 +1,6 @@
 export default function Page() {
     const handleSub = (event) => {
-        event.preventDef();
+        event.preventDefault();
 
         const form = event.target;
         const formData = {
@@ -22,26 +22,32 @@ export default function Page() {
 
 
             <div id="worlds">
+                <div className='guest-card'>
+                    <h2>Guest Name: </h2>
+                    <p>Town: Guest Town</p>
+                    <p>Item: Guest Item</p>
+                </div>
+                
                 
             </div>
-
+            
             <h2>Put more Here: </h2>
 
-            <form id="add-peoples">
-                <label htmlFor="name"> Name:</label>
+            <form id="add-peoples" onSubmit={handleSub}>
+                <label htmlFor="name-input"> Name: </label>
                 <input type="text" name="name" required />
 
-                <label htmlFor="name"> Town:</label>
+                <label htmlFor="town-input"> Town: </label>
                 <input type="text" name="town" required />
 
-                <label htmlFor="name"> Item:</label>
+                <label htmlFor="item-input"> Item: </label>
                 <input type="text" name="item" optional />
-
-                <button type="submit">Add: </button>
+                <div className='btn'>
+                    <button type='submit'>Add: </button>
+            </div>
             </form>
         
         </div>
         
-        )};
-
-<><link rel="stylesheet" href="style.css"></link><script src="script.js" defer></script></>;
+        );
+    }
