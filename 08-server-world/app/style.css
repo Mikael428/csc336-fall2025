@@ -1,0 +1,68 @@
+body {
+    background-color: whitesmoke;
+    justify-content: center;
+    display: flex;
+    align-items: left top;
+    height: 39vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container{
+    width: 500px;
+    padding: 20px;
+    background-color: gray;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.form-input{
+    margin-bottom: 11px;
+}
+
+.form-input label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-input input{
+    width: 80%;
+    padding: 10px;
+    border: 1px solid beige;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.btn button {
+    cursor: pointer;
+    background-color: #007BFF;
+    padding: 10px;
+    width: 80px;
+}
+
+.guest-card {
+    border: 10px solid;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+}
+
+.guest-card p {
+    margin: 5px 0;
+}
+
+.guest-card h2{
+    margin: 0;
+}
+
+body{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

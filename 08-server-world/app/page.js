@@ -22,7 +22,7 @@ export default function Page() {
 
 
             <div id="worlds">
-                <h1>{"add-peoples"}</h1>
+                
             </div>
 
             <h2>Put more Here: </h2>
@@ -39,8 +39,9 @@ export default function Page() {
 
                 <button type="submit">Add: </button>
             </form>
-
-            <p id="status"></p>
+        
         </div>
-        );
-    }
+        
+        )}
+
+<><link rel="stylesheet" href="style.css"></link><script src="script.js" defer></script></>
