@@ -1,3 +1,4 @@
+import './style.css'
 export default function Page() {
     const handleSub = (event) => {
         event.preventDefault();
@@ -18,17 +19,20 @@ export default function Page() {
             {/*
         <title>My Website</title>
             */}
+            <div className='container'>
             <h1>Information: </h1>
 
 
             <div id="worlds">
-                <div className='guest-card'>
-                    <h2>Guest Name: </h2>
-                    <p>Town: Guest Town</p>
-                    <p>Item: Guest Item</p>
+                {guests.map((guest,index) =>(
+                <div className='guest-card' key={index}>
+                    <h2>Guest Name: **{guest.name}**</h2>
+                    <p>Town: **{guest.town}**</p>
+                    <p>Item: **{guest.item}**</p>
                 </div>
+                ))}
                 
-                
+            </div>
             </div>
             
             <h2>Put more Here: </h2>
