@@ -16,7 +16,7 @@ app.get('/world', (req, res) => {
             console.error("Failed...", err);
             return res.status(500).json({error: "Failed to load..."});
         }
-        res.sethead('Content-Type', 'application/json');
+        res.set('Content-Type', 'application/json');
         res.send(data);
     });
 });
@@ -27,7 +27,7 @@ app.post('/update', (req, res) => {
             console.error("Failed to read", err);
             return res.status(500).json({error: 'Failed to access world data'});
         }
-    let worldData;
+    let worldData = { inhabitants: []};
     try {
         worldData = JSON.parse(data);
     } catch (parseError) {
@@ -38,24 +38,20 @@ app.post('/update', (req, res) => {
 
 const updatedClient = req.body;
 
-if (updatedClient.action === 'add' && 'add_inhabitant' && updatedClient.name && updatedClient.role) {
+if (updatedClient.action === 'add_inhabitant' && updatedClient.name && updatedClient.role) {
     const newInhab = {
         name: updatedClient.name,
         role: updatedClient.role,
         item: updatedClient.item
     };
-    if (Array.isArray(worldData.inhabitants)) {
-        worldData.inhabitants.push(newInhab);
-    } else {
-        worldData.inhabitants = [newInhab];
-    }
+    worldData.inhabitants.push(newInhab);
+} else if (updatedClient.action === "update_property" && updatedClient.key && updatedClient.value) {
+    worldData[updatedClient.key] = updatedClient.value;
 }
 
-const worldDataNew = Object.assign({}, worldData, updatedClient);
+const Jsonupdated = JSON.stringify(worldData, null, 2);
 
-const Jsonupdated = JSON.stringify(worldDataNew, null, 2);
-
-fs.writeFile(WORLD_FILE, updatedClient, (writeErr) => {
+fs.writeFile(WORLD_FILE, Jsonupdated, (writeErr) => {
     if (writeErr) {
         console.error("Failed to update written file", writeErr);
         return res.status(500).json({error: "failed to save world data"});
