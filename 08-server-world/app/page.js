@@ -1,4 +1,21 @@
+import React, { useState } from 'react';
+
+
 export default function Page() {
+    const handleSub = (event) => {
+        event.preventDef();
+
+        const form = event.target;
+        const formData = {
+            name: form.name.value,
+            town: form.town.value,
+            item: form.item.value,
+        };
+
+        console.log("Submitted", formData);
+        form.reset();
+    };
+    
     return (
         <div>
             {/*
@@ -27,7 +44,6 @@ export default function Page() {
             </form>
 
             <p id="status"></p>
-            <h1>Hello from Next.js!</h1>
         </div>
         );
     }
