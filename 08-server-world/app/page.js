@@ -16,46 +16,35 @@ export default function Page() {
     };
 
     return (
-        <div>
-            <head>
-                <link rel="stylesheet" href="style.css"></link>
-            </head>
-            {/*
-        <title>My Website</title>
-            */}
-            <div className='container'>
-            <h1>Information: </h1>
+        <html>
+    <head>
+        <title>GuestBook</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-
-            <div id="worlds">
-                {guests.map((guest,index) =>(
-                <div className='guest-card' key={index}>
-                    <h2>Guest Name: **{guest.name}**</h2>
-                    <p>Town: **{guest.town}**</p>
-                    <p>Item: **{guest.item}**</p>
-                </div>
-                ))}
-                
+    <div class="container">
+        <h1>Signing Board</h1>
+        <form id="guestForm">
+            <div class="form=input">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" required />
             </div>
+
+            <div class="form=input">
+                <label for="town">Town: </label>
+                <input type="text" id="town" name="town" required />
             </div>
-            
-            <h2>Put more Here: </h2>
 
-            <form id="add-peoples" onSubmit={handleSub}>
-                <label htmlFor="name-input"> Name: </label>
-                <input type="text" name="name" required />
-
-                <label htmlFor="town-input"> Town: </label>
-                <input type="text" name="town" required />
-
-                <label htmlFor="item-input"> Item: </label>
-                <input type="text" name="item" optional />
-                <div className='btn'>
-                    <button type='submit'> Add: </button>
+            <div class="form=input">
+                <label for="item">Favorite Color: </label>
+                <input type="text" id="item" name="item" required />
             </div>
-            </form>
-        
-        </div>
-        
-        );
-    }
+
+            <div class="btn"><button type="submit">Submit: </button></div>
+
+        </form>
+        <div id ="GuestList"></div>
+    </div>
+    <script src="script.js" defer></script>
+</html>
+    )};
