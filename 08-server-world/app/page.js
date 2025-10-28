@@ -1,6 +1,3 @@
-import React, { useState } from 'react';
-
-
 export default function Page() {
     const handleSub = (event) => {
         event.preventDef();
@@ -15,7 +12,7 @@ export default function Page() {
         console.log("Submitted", formData);
         form.reset();
     };
-    
+
     return (
         <div>
             {/*
@@ -31,13 +28,13 @@ export default function Page() {
             <h2>Put more Here: </h2>
 
             <form id="add-peoples">
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name"> Name:</label>
                 <input type="text" name="name" required />
 
-                <label htmlFor="name">Town:</label>
+                <label htmlFor="name"> Town:</label>
                 <input type="text" name="town" required />
 
-                <label htmlFor="name">Item:</label>
+                <label htmlFor="name"> Item:</label>
                 <input type="text" name="item" optional />
 
                 <button type="submit">Add: </button>
