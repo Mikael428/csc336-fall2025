@@ -22,7 +22,7 @@ export default function Page() {
 
 
             <div id="worlds">
-                <p>Loading...</p>
+                <h1>{"add-peoples"}</h1>
             </div>
 
             <h2>Put more Here: </h2>
