@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', loadplace);
+document.addEventListener('DOMContentLoaded', inital);
 
 const form = document.getElementById('update-form');
 const worldContainer = document.getElementById('world-display') || document.getElementById('worlds');
@@ -20,7 +20,7 @@ async function loadPlace() {
     } catch (err) {
         console.error('Error...', err);
         if (worldContainer) {
-            worldContainer.textContent('worlds') = 'Failed to load';
+            worldContainer.textContent = 'Failed to load';
         }       
     }
 }
