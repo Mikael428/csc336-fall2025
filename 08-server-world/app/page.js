@@ -1,5 +1,6 @@
-import './style.css'
+
 export default function Page() {
+    
     const handleSub = (event) => {
         event.preventDefault();
 
@@ -16,6 +17,9 @@ export default function Page() {
 
     return (
         <div>
+            <head>
+                <link rel="stylesheet" href="style.css"></link>
+            </head>
             {/*
         <title>My Website</title>
             */}
