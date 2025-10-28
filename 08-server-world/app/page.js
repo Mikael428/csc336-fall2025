@@ -43,7 +43,7 @@ export default function Page() {
                 <label htmlFor="item-input"> Item: </label>
                 <input type="text" name="item" optional />
                 <div className='btn'>
-                    <button type='submit'>Add: </button>
+                    <button type='submit'> Add: </button>
             </div>
             </form>
         
