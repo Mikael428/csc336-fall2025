@@ -4,7 +4,7 @@
     "scripts": {
         "build": "npx next build",
         "start": "npx next start",
-        "dev": "next dev"
+        "postinstall": "chmod +x node_modules/.bin/next || true"
     },
     "dependencies": {
         "next": "^14.2.33",
