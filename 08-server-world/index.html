@@ -1,8 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Assignment</title>
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 2rem;
+        }
 
-<head>
-    <title>View</title>
-</head>
+        .form-input {
+            margin-bottom: 1rem;
+        }
 
-<body>
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 4px;
+            border: 1px solid salmon;
+            border-radius: 4px;
+        }
+
+        .btn {
+            margin-top: 1rem;
+        }
+
+        .btn button{
+            padding: 12px;
+            background-color: aliceblue;
+            color: black;
+        }
+
+    </style>
+    </head>
+
+    <body class="world-container">
+        <h1>Add a Person</h1>
+
+        <form id="personForm">
+
+            <div class="form-input">
+            <label for="name"> Name: </label>
+            <input type="text" id="name" name="name" required>
+            </div>
+        <div class="form-input">
+            <label for="occupation"> Occupation: </label> 
+            <input type="text" id="occupation" name="occupation" required>
+        </div>
+        <div class="form-input">
+            <label for="item"> Item: </label>
+            <input type="text" id="item" name="item" required>
+        </div>
+        <div class ="btn"> 
+            <button type="submit" 
+                class="w-full py-3 px-4 bg-indigo-600 text-white font-semibold rounded-md shadow-lg hover:bg-indigo-700 transition duration-200">
+                Submit
+            </button>
+        </div>
+        </div>
+        <script src="script2.js" defer></script>
+    </body>
+</html>

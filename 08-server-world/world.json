@@ -1,0 +1,42 @@
+{
+  "name": "Mikael",
+  "population": 1500,
+  "towns": [
+    {
+      "name": "Michael",
+      "status": "Peaceful"
+    },
+    {
+      "name": "Adrian",
+      "status": "Angry"
+    }
+  ],
+  "people": [
+    {
+      "id": 1,
+      "name": "Dink",
+      "occupation": "Blacksmith",
+      "items": [
+        "Hammer",
+        "Axe"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Eddy",
+      "occupation": "Actor",
+      "items": [
+        "Coin",
+        "Wallet"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Ed",
+      "occupation": "Gamer",
+      "items": [
+        "Scrolls of Doom"
+      ]
+    }
+  ]
+}
