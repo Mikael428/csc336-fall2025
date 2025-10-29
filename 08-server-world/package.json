@@ -2,8 +2,8 @@
     "name": "website",
     "version": "1.0.0",
     "scripts": {
-        "build": "next build",
-        "start": "next start",
+        "build": "npx next build",
+        "start": "npx next start",
         "dev": "next dev"
     },
     "dependencies": {
