@@ -4,12 +4,12 @@ import Button from "./Button";
 
 
 function App() {
-  const [count, setCount] = useState([
+  const [items, setItems] = useState([
     { text: "Example Item", important: true}]);
   const [inputValue, setInputValue] = useState("");
 
   function Handle() {
-    if(inputValue.trim() === "") return;
+    if(!inputValue.trim()) return;
     setItems([...items, { text: inputValue, important: false}]);
     setInputValue("");
   }
