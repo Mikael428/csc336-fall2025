@@ -5,8 +5,7 @@ import Button from "./Button";
 
 function App() {
   const [count, setCount] = useState([
-    { text: "Example Item", important: true}
-  ]);
+    { text: "Example Item", important: true}]);
   const [inputValue, setInputValue] = useState("");
 
   function Handle() {
@@ -27,8 +26,9 @@ function App() {
         onChange={e=> setInputValue(e.target.value)}
         placeholder="Put new Item"
         />
-        <Button onClick={handleAdd}>Add Item</Button>
+        <Button onClick={Handle}>Add Item</Button>
         </div>
   );
 }
 export default App;
+
