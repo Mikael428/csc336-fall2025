@@ -21,3 +21,5 @@ const Home = ({ items, inputValue, setInputValue, HandleAddItem }) => {
 
     );
 };
+
+export default Home;

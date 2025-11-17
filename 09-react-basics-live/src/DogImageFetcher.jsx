@@ -3,11 +3,10 @@ import React, { useState, useEffect } from 'react';
 const TMDB_API_KEY = 'API_KEY_HERE';
 
 function MovieFetcher() {
-    const [movieData, setMovieData] = useState(null);
+    const [dogImg, setDogImg] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
-    const [movieId, setMovieId] = useState(550);
+    const [breed, setBreed] = useState('husky');
 
     useEffect(() => {
         if (!TMDB_API_KEY || TMDB_API_KEY === 'API_KEY_HERE') {
@@ -18,9 +17,9 @@ function MovieFetcher() {
 
         setLoading(true);
         setError(null);
-        setMovieData(null);
+        setDogImg(null);
 
-        const apiURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${TMDB_API_KEY}`;
+        const apiURL = `https://dog.ceo/api/breed/${breed}/images/random`;
         
         fetch(apiURL)
         .then(response => {
@@ -32,11 +31,11 @@ function MovieFetcher() {
             return response.json();
         })
         .then(data => {
-            setMovieData(data);
+            setDogImg(data.message);
             setLoading(false);
         })
         .catch(fetchError => {
-            console.error('Fetching TMDB data failed', fetchError);
+            console.error('Fetching Dog data failed', fetchError);
             setError(fetchError);
             setLoading(false);
         });
@@ -45,30 +44,26 @@ function MovieFetcher() {
 
     return (
         <div style={{ padding: '20px', border: '1px solid #ccc', borderRadius: '5px'}}>
-        <h2> Movie Database Fetcher </h2>
+        <h2> Dog Image Fetcher </h2>
 
         <p>Current ID: <strong>{movieId}</strong></p>
         <button
-        onClick={() => setMovieId(prevID => prevID === 550? 603: 550)}
+        onClick={() => setBreed(prev => prev === 'husky'? 'beagle': 'husky')}
         style={{marginBottom: '15px'}}
         >
-            Fetch Next Movie ({movieId === 550 ? 'The Matrix (ID 603)' : 'Fight Club (ID 550)'})
+            Fetch Next Breed ({movieId === 'husky' ? 'beagle' : 'husky'})
         </button>
 
-        {loading && <p>Loading Data...</p>}
+        {loading && <p>Loading Image...</p>}
         {error && <p style={{ color: 'red'}}> Error: {error.message}</p>}
         
-        {movieData && (
+        {dogImg && (
             <div style={{marginTop: '10px'}}>
-                <h3>{movieData.title} ({new Date(movieData.release_date).getFullYear()})</h3>
-                <p><strong>Tagline:</strong> <em>{movieData.tagline}</em></p>
-                <p><strong>Overview:</strong> <em>{movieData.overview}</em></p>
-                <p><strong>Rating:</strong> <em>{movieData.vote_average.toFixed(1)}</em></p>
-                <p><strong>Genres:</strong> <em>{movieData.genres.map(g => g.name).join(', ')}</p>
+                <img src={dogImg} alt={`A ${breed}`} style={{ maxWidth: '100%', height: 'auto'}}/>
             </div>
         )}
         </div>
     );
 }
 
-export default MovieFetcher;
+export default DogImageFetcher;

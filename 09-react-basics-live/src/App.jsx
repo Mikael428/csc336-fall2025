@@ -1,10 +1,7 @@
 import { useState } from 'react'
 import ListItem from './ListItem';
 import Button from "./Button";
-import APIData from '.APIData';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Home from './Home';
-import About from '.About';
+import APIData from './APIData';
 
 
 function App() {
