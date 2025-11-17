@@ -2,34 +2,32 @@ import { useState } from 'react'
 import ListItem from './ListItem';
 import Button from "./Button";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import ListContainer from './ListContainer';
+import DogImageFetcher from './DogImageFetcher';
 
 
 function App() {
-  const [items, setItems] = useState([
-    { text: "Example Item", important: true}]);
-  const [inputValue, setInputValue] = useState("");
-
-  function Handle() {
-    if(!inputValue.trim()) return;
-    setItems([...items, { text: inputValue, important: false}]);
-    setInputValue("");
-  }
-
   return (
-    <div>
-      <h1>My List</h1>
-        {items.map((item, index) => (
-          <ListItem key={index} text={item.text} important={item.important} />
-        ))}
-        <input 
-        type="text"
-        value={inputValue}
-        onChange={e=> setInputValue(e.target.value)}
-        placeholder="Put new Item"
-        />
-        <Button onClick={Handle}>Add Item</Button>
-        </div>
+    <Router>
+      <header>
+        <h1>React Basics App</h1>
+        <nav>
+          <Link to="/">List Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/api-data">Dog Images</Link>
+        </nav>
+      </header>
+      <hr />
+      <main>
+        <Routes>
+          <Route path="/" element={<ListContainer />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/api-data" element={<DogImageFetcher />} />
+        </Routes>
+      </main>
+    </Router>
   );
 }
+ 
 export default App;
 
