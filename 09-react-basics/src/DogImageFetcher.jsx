@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const TMDB_API_KEY = 'API_KEY_HERE';
 
-function MovieFetcher() {
+function DogImageFetcher() {
     const [dogImg, setDogImg] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
