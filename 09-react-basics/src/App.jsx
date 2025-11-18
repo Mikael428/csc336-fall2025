@@ -1,30 +1,26 @@
-import { useState } from 'react'
 import About from './About';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import ListContainer from './ListContainer.jsx';
 import DogImageFetcher from './DogImageFetcher.jsx';
-import './App.css';
+
 
 function App() {
   return (
-    <Router>
-      <header>
-        <h1>React Basics App</h1>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
         <nav>
-          <Link to="/">List Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/api-data">Dog Images</Link>
+          <NavLink to="/">List Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/api-data">Dog Images</NavLink>
         </nav>
-      </header>
-      <hr />
-      <main>
+        <main>
         <Routes>
           <Route path="/" element={<ListContainer />} />
           <Route path="/about" element={<About />} />
           <Route path="/api-data" element={<DogImageFetcher />} />
         </Routes>
       </main>
-    </Router>
+
+    </BrowserRouter>
   );
 }
  
