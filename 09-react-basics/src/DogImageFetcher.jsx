@@ -40,18 +40,18 @@ function DogImageFetcher() {
             setLoading(false);
         });
 
-    }, [movieId]);
+    }, [breed]);
 
     return (
         <div style={{ padding: '20px', border: '1px solid #ccc', borderRadius: '5px'}}>
         <h2> Dog Image Fetcher </h2>
 
-        <p>Current ID: <strong>{movieId}</strong></p>
+        <p>Current ID: <strong>{breed}</strong></p>
         <button
         onClick={() => setBreed(prev => prev === 'husky'? 'beagle': 'husky')}
         style={{marginBottom: '15px'}}
         >
-            Fetch Next Breed ({movieId === 'husky' ? 'beagle' : 'husky'})
+            Fetch Next Breed ({breed === 'husky' ? 'beagle' : 'husky'})
         </button>
 
         {loading && <p>Loading Image...</p>}

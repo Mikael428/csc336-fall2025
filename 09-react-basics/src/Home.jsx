@@ -15,7 +15,7 @@ const Home = ({ items, inputValue, setInputValue, HandleAddItem }) => {
         onChange={e=> setInputValue(e.target.value)}
         placeholder="Put new Item"
         />
-        <Button onClick={Handle}>Add Item</Button>
+        <Button onClick={HandleAddItem}>Add Item</Button>
         </div>
 
 
