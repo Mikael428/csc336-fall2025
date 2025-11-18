@@ -1,7 +1,7 @@
 import ListItem from "./ListItem";
 import Button from "./Button";
 
-const Home = ({ items, inputValue, setInputValue, HandleAddItem }) => {
+/* const Home = ({ items, inputValue, setInputValue, HandleAddItem }) => {
     return (
         <div>
             <h1> List: </h1>
@@ -20,6 +20,14 @@ const Home = ({ items, inputValue, setInputValue, HandleAddItem }) => {
 
 
     );
-};
+}; */
+
+function Home() {
+    return(
+        <div>
+            <h1>Welcome Here!</h1>
+        </div>
+    );
+}
 
 export default Home;

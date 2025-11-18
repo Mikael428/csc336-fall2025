@@ -1,4 +1,4 @@
-import About from './About.js';
+import About from './about.jsx';
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import ListContainer from './ListContainer.jsx';
 import DogImageFetcher from './DogImageFetcher.jsx';
