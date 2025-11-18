@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import ListItem from './ListItem';
-import Button from "./Button";
+import About from './About';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import ListContainer from './ListContainer';
-import DogImageFetcher from './DogImageFetcher';
+import ListContainer from './ListContainer.jsx';
+import DogImageFetcher from './DogImageFetcher.jsx';
 
 
 function App() {
