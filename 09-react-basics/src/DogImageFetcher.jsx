@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-const TMDB_API_KEY = 'API_KEY_HERE';
-
 function DogImageFetcher() {
     const [dogImg, setDogImg] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [breed, setBreed] = useState('husky');
+    const [breed, setBreed] = useState("husky");
 
     useEffect(() => {
-        if (!TMDB_API_KEY || TMDB_API_KEY === 'API_KEY_HERE') {
-            setError(new Error("TMDB API is missing."))
-            setLoading(false);
-            return;
-        }
-
         setLoading(true);
         setError(null);
         setDogImg(null);
