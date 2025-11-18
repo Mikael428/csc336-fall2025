@@ -3,7 +3,7 @@ import About from './About';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import ListContainer from './ListContainer.jsx';
 import DogImageFetcher from './DogImageFetcher.jsx';
-
+import './App.css';
 
 function App() {
   return (
