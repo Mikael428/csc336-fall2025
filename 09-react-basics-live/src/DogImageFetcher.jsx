@@ -11,7 +11,7 @@ function DogImageFetcher() {
         setError(null);
         setDogImg(null);
         
-        const apiURL = `https://dog.ceo/api/breed/${breed}/images/random`;
+        const apiURL = `https://dog.ceo/api/breeds/image/random`;
         
         fetch(apiURL)
         .then(response => {
