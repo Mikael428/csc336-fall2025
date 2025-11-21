@@ -38,7 +38,7 @@ function DogImageFetcher() {
         <div style={{ padding: '20px', border: '1px solid #ccc', borderRadius: '5px'}}>
         <h2> Dog Image Fetcher </h2>
 
-        <p>Current ID: <strong>{breed}</strong></p>
+        <p>Current Breed: <strong>{breed}</strong></p>
         <button
         onClick={() => setBreed(prev => prev === 'husky'? 'beagle': 'husky')}
         style={{marginBottom: '15px'}}
