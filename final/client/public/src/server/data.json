@@ -1,0 +1,18 @@
+{
+    "schedule": [
+        "10:00am - Registration",
+        "11:00am - Keynote",
+        "12:00pm - Workshop",
+        "01:00pm - Lunch"
+    ],
+    "guests": [
+        {
+        "name": "Mike McGee",
+        "email": "mike@email.com"
+        },
+        {
+        "name": "Nose Lim",
+        "email": "Nose@email.com"
+        }
+    ]
+}
