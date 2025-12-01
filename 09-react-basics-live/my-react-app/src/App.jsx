@@ -1,28 +1,7 @@
-import About from './about.jsx';
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-import ListContainer from './ListContainer.jsx';
-import DogImageFetcher from './DogImageFetcher.jsx';
-
+import "./App.css";
 
 function App() {
-  return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <nav>
-          <NavLink to="/">List Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/api-data">Dog Images</NavLink>
-        </nav>
-        <main>
-        <Routes>
-          <Route path="/" element={<ListContainer />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/api-data" element={<DogImageFetcher />} />
-        </Routes>
-      </main>
-
-    </BrowserRouter>
-  );
+  return <h1>Hello from App</h1>;
 }
- 
-export default App;
 
+export default App;
