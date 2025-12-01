@@ -1,7 +1,7 @@
-import About from '../my-react-app/src/about.jsx';
+import About from './about.jsx';
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-import ListContainer from '../my-react-app/src/ListContainer.jsx';
-import DogImageFetcher from '../my-react-app/src/DogImageFetcher.jsx';
+import ListContainer from './ListContainer.jsx';
+import DogImageFetcher from './DogImageFetcher.jsx';
 
 
 function App() {
