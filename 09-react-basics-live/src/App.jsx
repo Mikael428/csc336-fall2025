@@ -12,14 +12,11 @@ function App() {
           <NavLink to="/about">About</NavLink>
           <NavLink to="/api-data">Dog Images</NavLink>
         </nav>
-        <main>
         <Routes>
           <Route path="/" element={<ListContainer />} />
           <Route path="/about" element={<About />} />
           <Route path="/api-data" element={<DogImageFetcher />} />
         </Routes>
-      </main>
-
     </BrowserRouter>
   );
 }
