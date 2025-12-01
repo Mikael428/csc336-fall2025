@@ -4,7 +4,7 @@ const express = require('express');
 const fs = require('fs');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const WORLD_FILE = path.join(__dirname, 'world.json');
 
 app.use(express.static('public'));
@@ -56,12 +56,12 @@ fs.writeFile(WORLD_FILE, Jsonupdated, (writeErr) => {
         console.error("Failed to update written file", writeErr);
         return res.status(500).json({error: "failed to save world data"});
     }
-    res.status(200).json(worldDataNew);
+    res.status(200).json(worldData);
 });
     });
 });
 
 app.listen(PORT, () => {
-    console.log(`Server Running at http://localhost${PORT}`);
+    console.log(`Server Running at http://localhost:3000/`);
     console.log(`Static files...`);
 });
