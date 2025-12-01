@@ -1,0 +1,23 @@
+nav {
+  display: flex;
+  gap: 0;
+  padding: 0;
+  border-bottom: 1px solid hsl(0, 0%, 80%);
+}
+
+nav a {
+  padding: 0.5em 1em;
+  color: #333;
+  background-color: #1a4bde;
+  display: flex;
+  align-items: center;
+}
+
+nav a:hover {
+  background-color: #454545;
+}
+
+nav a.active {
+  background-color: #797979;
+  color: #06ab50;
+}
