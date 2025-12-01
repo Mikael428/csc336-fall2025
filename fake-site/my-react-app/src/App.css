@@ -1,15 +1,12 @@
-/* src/App.css */
 
-/* Global styles applied to the entire page */
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f7f6; /* Light gray background */
-  color: #333; /* Dark text */
+  background-color: #f4f7f6; 
+  color: #333;
 }
 
-/* Styles for the main App container */
 .App {
   max-width: 800px;
   margin: 40px auto;
@@ -17,10 +14,9 @@ body {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  min-height: 50vh; /* Ensures a decent height */
+  min-height: 50vh; 
 }
 
-/* --- Typography and Headings --- */
 h1 {
   text-align: center;
   color: #007bff; /* Blue heading */
@@ -29,34 +25,32 @@ h1 {
   padding-bottom: 10px;
 }
 
-/* --- Buttons --- */
 button {
   padding: 10px 20px;
   font-size: 1em;
   font-weight: bold;
   color: white;
-  background-color: #28a745; /* Green button */
+  background-color: #28a745; 
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  display: block; /* Make it a block element */
-  margin: 10px auto; /* Center the button */
+  display: block;
+  margin: 10px auto; 
 }
 
 button:hover {
-  background-color: #218838; /* Darker green on hover */
+  background-color: #218838; 
 }
 
-/* --- Navigation Bar (from App.jsx) --- */
 nav {
   display: flex;
-  justify-content: center; /* Center the links */
-  gap: 20px; /* Space between links */
+  justify-content: center; 
+  gap: 20px; 
   padding: 15px 0;
-  background-color: #343a40; /* Dark gray background */
+  background-color: #343a40; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px; /* Space below the navbar */
+  margin-bottom: 30px; 
 }
 
 nav a {
@@ -68,10 +62,9 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #007bff; /* Blue hover background */
+  background-color: #007bff; 
 }
 
-/* --- Form Styles (for Register.jsx) --- */
 form {
   display: flex;
   flex-direction: column;
