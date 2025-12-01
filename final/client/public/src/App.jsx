@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import Register from "./Register";
-import Schedule from "./Schedule";
+import Home from "../../../../fake-site/my-react-app/src/Home";
+import Register from "../../../../fake-site/my-react-app/src/Register";
+import Schedule from "../../../../fake-site/my-react-app/src/Schedule";
 
 function App() {
     return (
