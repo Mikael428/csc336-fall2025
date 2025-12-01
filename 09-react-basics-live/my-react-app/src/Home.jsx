@@ -1,5 +1,5 @@
-import ListItem from "./ListItem";
-import Button from "./Button";
+import ListItem from "../../src/ListItem";
+import Button from "../../src/Button";
 
 function Home() {
     return(
