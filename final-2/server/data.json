@@ -1,0 +1,19 @@
+{
+  "schedule": [
+    {
+      "time": "10:00 AM",
+      "title": "Registration",
+      "location": "Lobby"
+    },
+    {
+      "time": "11:00 AM", 
+      "title": "Keynote Speech",
+      "location": "Main Hall"
+    },
+    {
+      "time": "12:00 PM",
+      "title": "Lunch Break",
+      "location": "Cafeteria"
+    }
+  ]
+}
