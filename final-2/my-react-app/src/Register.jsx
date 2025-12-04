@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Register.css";
 
 function Register() {
     const [name, setName] = useState("");
@@ -11,15 +12,15 @@ function Register() {
         setSubmit(true);
     };
 
-    if (submit) return <p>Successful Registration</p>
+    if (submit) return <p>Successful Registration!</p>
 
     return (
-        <form onSubmit={handleSubmitted}>
+        <form className="register-form" onSubmit={handleSubmitted}>
             <input value={name} onChange={e => setName(e.target.value)}
         placeholder="Name" />
             <input value={email} onChange={e => setEmail(e.target.value)}
         placeholder="Email" />
-        <button type="submit">Register</button>
+        <button className="submit-button" type="submit">Register</button>
         </form>
     );
 }

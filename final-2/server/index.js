@@ -5,14 +5,18 @@ app.use(express.json());
 
 let data = require("./data.json");
 
-app.get("/api/schedule", (req, res) => {
-    res.json([
-        {time: "10:00am", title: "Registration Time", location: "Lobby"},
-        {time: "11:00am", title: "Meeting", location: "2nd Floor Talkative"},
-        {time: "12:00pm", title: "Lunch", location: "Lunch Room"},
-        {time: "01:00pm", title: "Meeting", location: "4th Floor Talkative"},
-    ]);
+
+
+
+app.get('/api/schedule', (req, res) => {
+  const scheduleData = [
+    { time: "10:00 AM", title: "Opening Keynote", location: "Main Hall" },
+    { time: "11:00 AM", title: "Workshop", location: "Room A" },
+    { time: "12:00 PM", title: "Lunch", location: "Cafeteria" }
+  ];
+  res.json(scheduleData);
 });
+
 
 app.get("/api.guests", (req, res) => {
     res.json(data.guests);
