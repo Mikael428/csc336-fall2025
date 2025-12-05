@@ -5,6 +5,7 @@
     border: 1px solid #ddd;
     border-radius: 22px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    font-family: Tahoma, Geneva;
 }
 
 .form-input {
@@ -13,6 +14,7 @@
     margin-bottom: 40px;
     font-size: 22px;
     border: 10px solid #ddd;
+    box-sizing: border-box;
 }
 
 .form-input:focus {
@@ -21,3 +23,12 @@
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
 }
 
+.submit-button {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    border: white;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
