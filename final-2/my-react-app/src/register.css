@@ -32,3 +32,29 @@
     border-radius: 8px;
     transition: all 0.3s ease;
 }
+
+.Name {
+    width: 94%;
+    padding: 16px 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.Email {
+    width: 94%;
+    padding: 16px 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.Register-Message {
+    text-align: center;
+    color: #4CAF50;
+    font-size: 20px;
+    padding: 30px;
+}
+
+.mx-auto{
+    font-family: Helvetica;
+    width: 110px;
+}

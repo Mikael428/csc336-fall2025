@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Schedule.css";
+import Conferenced from "./assets/Conf_Img.jpg"
 
 function ScheduleTable({ rows }) {
     return (
@@ -39,8 +40,9 @@ useEffect(() => {
     { time: "10:00 AM", title: "Test Event 1", location: "Room A" },
     { time: "11:00 AM", title: "Test Event 2", location: "Room B" },
     { time: "12:00 PM", title: "Test Event 3", location: "Room C" },
-    { time: "01:00 PM", title: "Test Event 2", location: "Room D" },
-    { time: "02:00 PM", title: "Test Event 2", location: "Room E" }
+    { time: "01:00 PM", title: "Test Event 4", location: "Room D" },
+    { time: "02:00 PM", title: "Test Event 5", location: "Room E" },
+    { time: "03:00 PM", title: "Test Event 6", location: "Room F" },
   ];
   setSchedule(testData);
   setLoading(false);
@@ -64,16 +66,23 @@ useEffect(() => {
             </div>
     );
 }
-    
-  
 
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>Schedule</h2>
-        <ScheduleTable rows={schedule} />
-    </div>
-  )
+      <h1>Schedule</h1>
+
+
+    <img
+        src={Conferenced}
+        alt="Our Company"
+        className="mx-auto mb-8 rounded-2x1 max-w-full h-auto shadow-lg"
+        />
+
+    <ScheduleTable rows={schedule} />
+</div>
+    
+  );
 }
 
 export default Schedule;

@@ -9,19 +9,6 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 
-function Home() {
-  return <h1>Home Page</h1>
-}
-
-function About() {
-  return <h1>About Page</h1>;
-}
-
-function Contact() {
-  return <h1>Contact Page</h1>;
-}
-
-
 function App() {
   const [fromServer, setFromServer] = useState({something: 0});
 
