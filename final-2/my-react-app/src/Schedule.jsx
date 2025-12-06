@@ -70,7 +70,7 @@ useEffect(() => {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h1>Schedule</h1>
+      <h1 style={{ fontFamily: "Helvetica" }}>Schedule</h1>
 
 
     <img

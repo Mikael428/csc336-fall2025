@@ -14,14 +14,15 @@ function Home() {
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">
           Home Page
         </h1>
-        <p className="text-slate-300">
-          Welcome! Our Company is brand new, but ready to make your experience! Adieus except say barton put feebly favour him. Entreaties unpleasant sufficient few pianoforte discovered uncommonly ask. Morning cousins amongst in mr weather do neither. Warmth object matter course active law spring six. Pursuit showing tedious unknown winding see had man add. 
-        </p>
-      <div className="block mx-auto w-max transition-transform duration-300 hover:scale-110 cursor-pointer">
+        <div className="w-full bg-gray-200">
+          <p class="p-4">
+          Welcome! Our Company is brand new, but ready to make your experience! Adieus except say barton put feebly favour him. Entreaties unpleasant sufficient few pianoforte discovered uncommonly ask. Morning cousins amongst in mr weather do neither. Warmth object matter course active law spring six. Pursuit showing tedious unknown winding see had man add.</p>
+        </div>
+      <div className="block transition-transform duration-300 hover">
         <img
         src={viteImage}
         alt="Our Company"
-        className="block h-auto max-w-full"
+        className="max-full"
         />
       </div>
         <div className="flex flex-col">
@@ -45,13 +46,22 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/">Home</Link> |{" "}
-        <Link to="/Schedule">Schedule</Link> |{" "}
-        <Link to="/Register">Register</Link>
-      
-      </nav>
-        <main className="Navig">
+        <header className="fixed top-0 left-0 w-full bg-gray-900 shadow-xl z-50">
+          <nav className="flex items-center justify-between mx-auto max-w-7xl px-4 py-4">
+        
+        <div className="flex space-x-6 text-lg font-medium">
+          <Link to="/"
+          className="text-gray-300 hover:text-indigo-400 transition duration-150">Home</Link> |{" "}
+          <Link to="/Schedule"
+          className="text-gray-300 hover:text-indigo-400 transition duration-150">Schedule</Link> |{" "}
+          <Link to="/Register"
+          className="text-gray-300 hover:text-indigo-400 transition duration-150">Register
+            </Link>
+          </div>
+        </nav>
+      </header>
+
+        <main className="pt-20 Navig">
       <Routes> 
         <Route path="/" element={<Home />} />
         <Route path="/Schedule" element={<Schedule />} />
