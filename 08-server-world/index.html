@@ -65,6 +65,35 @@
         </div>
     </form>
         </div>
-        <script src="server.js" defer></script>
+
+        <div id="containers">
+            <h2>Added:</h2>
+        </div>
+
+        <script>
+            const personForm = document.getElementById("personForm");
+            const peopleContainer = document.getElementById('containers');
+
+            personForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const occupation = document.getElementById('occupation').value;
+                const item = document.getElementById('item').value;
+
+                const newPersonDiv = document.createElement('div');
+                newPersonDiv.classList.add('person-entry');
+
+                newPersonDiv.innerHTML = `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Occupation:</strong> ${occupation}</p>
+                <p><strong>Item:</strong> ${item}</p>
+            `;
+
+                peopleContainer.appendChild(newPersonDiv);
+
+                personForm.reset();
+            });
+        </script>
     </body>
 </html>
