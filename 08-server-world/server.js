@@ -13,9 +13,16 @@ app.use(bodyParser.json());
 app.get('/world', (req, res) => {
     fs.readFile(WORLD_FILE, (err, data) => {
         if (err) {
-            console.error("Failed...", err);
-            return res.status(500).json({error: "Failed to load..."});
+            if (err.code === 'ENOENT') {
+                console.log(`Failed... not found at ${WORLD_FILE}. Empty Data`);
+                const emptyWorld = {"inhabitants": []};
+                res.set("Content-Type", 'application/json');
+                return res.status(200).json(emptyWorld);
         }
+
+        console.error("Failed to read file", err);
+        return res.status(500).json({error: "Failed World Data"});
+    }
         res.set('Content-Type', 'application/json');
         res.send(data);
     });
@@ -38,10 +45,10 @@ app.post('/update', (req, res) => {
 
 const updatedClient = req.body;
 
-if (updatedClient.action === 'add_inhabitant' && updatedClient.name && updatedClient.role) {
+if (updatedClient.action === 'add_inhabitant' && updatedClient.name && updatedClient.occupation && updatedClient.item) {
     const newInhab = {
         name: updatedClient.name,
-        role: updatedClient.role,
+        occupation: updatedClient.occupation,
         item: updatedClient.item
     };
     worldData.inhabitants.push(newInhab);
@@ -62,6 +69,6 @@ fs.writeFile(WORLD_FILE, Jsonupdated, (writeErr) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server Running at http://localhost:3000/`);
+    console.log(`Server Running at http://localhost:${PORT}`);
     console.log(`Static files...`);
 });

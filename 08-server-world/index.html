@@ -35,13 +35,21 @@
             padding: 12px;
             background-color: aliceblue;
             color: black;
+            border: none; 
+            cursor: pointer; 
+        }
+        
+        .person-entry {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px dashed #ccc;
         }
 
     </style>
     </head>
 
     <body class="world-container">
-        <h1>Add a Person</h1>
+        <h1>Add a New Inhabitant</h1>
 
         <form id="personForm">
 
@@ -55,19 +63,16 @@
         </div>
         <div class="form-input">
             <label for="item"> Item: </label>
-            <input type="text" id="item" name="item" required>
-        </div>
+            <input type="text" id="item" name="item"> </div>
         <div class ="btn"> 
-            <button type="submit" 
-                class="w-full py-3 px-4 bg-indigo-600 text-white font-semibold rounded-md shadow-lg hover:bg-indigo-700 transition duration-200">
+            <button type="submit">
                 Submit
             </button>
         </div>
     </form>
-        </div>
 
-        <div id="containers">
-            <h2>Added:</h2>
+        <hr> <div id="containers">
+            <h2>Loading World Data...</h2>
         </div>
 
         <script>
@@ -97,26 +102,28 @@
                         personDiv.classList.add('person-entry');
                         personDiv.innerHTML = `
                             <p><strong>Name:</strong> ${person.name}</p>
-                            <p><strong>Occupation (Role):</strong> ${person.role}</p>
+                            <p><strong>Occupation:</strong> ${person.occupation}</p>
                             <p><strong>Item:</strong> ${person.item || 'N/A'}</p>
                         `;
                         peopleContainer.appendChild(personDiv);
                     });
-            } else {
+                } else {
                     peopleContainer.innerHTML += '<p>No inhabitants found in the world.</p>';
                 }
             }
-            personForm.addEventListener('submit', function(event) {
+
+            personForm.addEventListener('submit', async function(event) {
                 event.preventDefault();
 
                 const name = document.getElementById('name').value;
                 const occupation = document.getElementById('occupation').value;
                 const item = document.getElementById('item').value;
+                
 
                 const payload = {
-                    action: 'add_inhabitant'
+                    action: 'add_inhabitant',
                     name: name,
-                    role: role,
+                    occupation: occupation,
                     item: item
                 };
 
@@ -131,20 +138,21 @@
 
                     const result = await response.json();
 
-                if (response.ok) {
-                    console.log('Update Successful: ', result);
-                    fetchWorldData();
-                    personForm.reset();
-                } else {
-                    console.error("Updated Failed: ", result.error);
-                    alert(`Error updating world: ${result.error}`);
+                    if (response.ok) {
+                        console.log('Update Successful: ', result);
+                        fetchWorldData();
+                        personForm.reset();
+                    } else {
+                        console.error("Updated Failed: ", result.error);
+                        alert(`Error updating world: ${result.error}`);
+                    }
+                } catch (error) {
+                    console.error("Network Error", error);
+                    alert('Unexpected Error');
                 }
-            } catch (error) {
-                console.error("Network Error", error);
-                alert('Unexpected Error');
-            }
-        });
-                fetchWorldData();
-                </script>
-                </body>
-                </html>
+            });
+            
+            fetchWorldData();
+        </script>
+    </body>
+</html>

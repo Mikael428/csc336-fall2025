@@ -11,32 +11,21 @@
       "status": "Angry"
     }
   ],
-  "peopls": [
+  "inhabitants": [
     {
-      "id": 1,
       "name": "Dink",
       "occupation": "Blacksmith",
-      "items": [
-        "Hammer",
-        "Axe"
-      ]
+      "item": "Hammer, Axe" 
     },
     {
-      "id": 2,
       "name": "Eddy",
       "occupation": "Actor",
-      "items": [
-        "Coin",
-        "Wallet"
-      ]
+      "item": "Coin, Wallet" 
     },
     {
-      "id": 3,
       "name": "Ed",
       "occupation": "Gamer",
-      "items": [
-        "Scrolls of Doom"
-      ]
+      "item": "Scrolls of Doom"
     }
   ]
-}
+};
