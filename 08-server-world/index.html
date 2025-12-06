@@ -74,6 +74,38 @@
             const personForm = document.getElementById("personForm");
             const peopleContainer = document.getElementById('containers');
 
+            async function fetchWorldData() {
+                try {
+                    const response = await fetch('/world');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const worldData = await response.json();
+                    displayWorldData(worldData);
+                } catch (error) {
+                    console.error('Error fetching world data', error);
+                    peopleContainer.innerHTML = '<h2>Error loading world data</h2>';
+                }
+            }
+
+            function displayWorldData(worldData) {
+                peopleContainer.innerHTML = '<h2>Current World Inhabitants:</h2>';
+
+                if (worldData && worldData.inhabitants && worldData.inhabitants.length > 0) {
+                    worldData.inhabitants.forEach(person => {
+                        const personDiv = document.createElement('div');
+                        personDiv.classList.add('person-entry');
+                        personDiv.innerHTML = `
+                            <p><strong>Name:</strong> ${person.name}</p>
+                            <p><strong>Occupation (Role):</strong> ${person.role}</p>
+                            <p><strong>Item:</strong> ${person.item || 'N/A'}</p>
+                        `;
+                        peopleContainer.appendChild(personDiv);
+                    });
+            } else {
+                    peopleContainer.innerHTML += '<p>No inhabitants found in the world.</p>';
+                }
+            }
             personForm.addEventListener('submit', function(event) {
                 event.preventDefault();
 
@@ -81,20 +113,38 @@
                 const occupation = document.getElementById('occupation').value;
                 const item = document.getElementById('item').value;
 
-                const newPersonDiv = document.createElement('div');
-                newPersonDiv.classList.add('person-entry');
+                const payload = {
+                    action: 'add_inhabitant'
+                    name: name,
+                    role: role,
+                    item: item
+                };
 
-                newPersonDiv.innerHTML = `
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Occupation:</strong> ${occupation}</p>
-                <p><strong>Item:</strong> ${item}</p>
-                <p><strong>----------------------------</p>
-            `;
+                try {
+                    const response = await fetch('/update', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
 
-                peopleContainer.appendChild(newPersonDiv);
+                    const result = await response.json();
 
-                personForm.reset();
-            });
-        </script>
-    </body>
-</html>
+                if (response.ok) {
+                    console.log('Update Successful: ', result);
+                    fetchWorldData();
+                    personForm.reset();
+                } else {
+                    console.error("Updated Failed: ", result.error);
+                    alert(`Error updating world: ${result.error}`);
+                }
+            } catch (error) {
+                console.error("Network Error", error);
+                alert('Unexpected Error');
+            }
+        });
+                fetchWorldData();
+                </script>
+                </body>
+                </html>
