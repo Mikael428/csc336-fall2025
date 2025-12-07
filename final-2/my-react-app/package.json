@@ -5,12 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx react-scripts build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "node index.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "dependencies": {
     "react": "^19.2.0",
