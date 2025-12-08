@@ -1,19 +1,12 @@
 {
-  "schedule-table": [
+  "guests": [
     {
-      "time": "10:00 AM",
-      "title": "Registration",
-      "location": "Lobby"
+      "name": "Mikael",
+      "email": "mikael@example.com"
     },
     {
-      "time": "11:00 AM", 
-      "title": "Keynote Speech",
-      "location": "Main Hall"
-    },
-    {
-      "time": "12:00 PM",
-      "title": "Lunch Break",
-      "location": "Cafeteria"
+      "name": "Jane Doe",
+      "email": "jane@test.com"
     }
-  ]
+]
 }

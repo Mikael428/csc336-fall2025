@@ -3,16 +3,20 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./register.css";
 
+const REGISTER_API_URL = "http://localhost:3001/api/register";
+
 function Register() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [submit, setSubmit] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const handleSubmitted = async (e) => {
         e.preventDefault();
 
         if (!name.trim() || !email.trim()) {
             toast.error("Please fill all included fields");
+            return;
     }
 
 
@@ -21,11 +25,33 @@ function Register() {
         if (!emailPattern.test(email.trim())) {
             toast.error("Please enter a valid email address.");
             return;
-        }
+    }
 
-        setSubmit(true);
-        toast.success(`Successful!!`);
-    }; 
+        setLoading(true);
+
+        try {
+            const response = await fetch(REGISTER_API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json'},
+                body: JSON.stringify({ name: name.trim(), email: email.trim()}),
+            });
+            const data = await response.json();
+
+            if (!response.ok) {
+                const errorMessage = data.error || 'Registration failed due to a server error.';
+                toast.error(`Error: ${errorMessage}`)
+                return;
+            }
+
+            setSubmit(true);
+            toast.success(`Successful!! ${name.trim()}, check your email.`);
+        } catch (error) {
+            console.error("Registration Error", error);
+            toast.error("Network error: Could not connect to the registration service");
+        } finally {
+            setLoading(false);
+        }
+    };
 
         if (submit) {
             return (
