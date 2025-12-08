@@ -1,4 +1,22 @@
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import fs from 'fs';
+import path from 'path';
+
+import { fileURLToPath } from 'url';
+
+const app = express();
+const PORT = 3001;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const REG_DB_FILE = path.join(__dirname, 'db_registrations.json');
+
+
+app.use(cors());
+app.use(bodyParser.json());
 
 function readRegData() {
     try {
@@ -42,3 +60,7 @@ app.post('/api/register', (req, res) => {
 
     res.status(201).json({ message: 'Registration successful', registration: newRegistration });
 });
+
+app.listen(PORT, () => {
+    console.log(`Registration listening on http://localhost${PORT}`);
+})
