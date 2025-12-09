@@ -8,12 +8,12 @@ const __dirname = path.dirname(__filename);
 const REG_DB_FILE = path.join(__dirname, '..', 'db_registrations.json');
 
 function readRegData() {
-    try {
-        const data = fs.readFileSync(REG_DB_FILE, 'utf8');
-        return JSON.parse(data || '[]'); 
-    } catch (error) {
-        return []; 
-    }
+try {
+    const data = fs.readFileSync(REG_DB_FILE, 'utf8');
+        return JSON.parse(data || '[]'); 
+    } catch (error) { 
+        return []; 
+    }
 }
 
 function writeRegData(data) {
