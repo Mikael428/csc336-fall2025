@@ -23,8 +23,11 @@ function DogImageFetcher() {
             return response.json();
         })
         .then(data => {
+            if (data.status === 'success' && data.message) {
             setDogImg(data.message);
             setLoading(false);
+        } else {
+            throw new Error('Couldnt fetch');
         })
         .catch(fetchError => {
             console.error('Fetching Dog data failed', fetchError);

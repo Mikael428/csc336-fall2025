@@ -23,6 +23,7 @@ function App() {
     
     if (lowerText.includes("gym") || lowerText.includes("workout") || lowerText.includes("doctor")) {
       return "Health";
+      return "High Priority";
     }
 
     if (lowerText.includes("shop") || lowerText.includes("cook") || lowerText.includes("clean")) {

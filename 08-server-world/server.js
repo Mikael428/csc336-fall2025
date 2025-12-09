@@ -4,7 +4,7 @@ const express = require('express');
 const fs = require('fs');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 const WORLD_FILE = path.join(__dirname, 'world.json');
 
 app.use(express.static('public'));
@@ -13,16 +13,9 @@ app.use(bodyParser.json());
 app.get('/world', (req, res) => {
     fs.readFile(WORLD_FILE, (err, data) => {
         if (err) {
-            if (err.code === 'ENOENT') {
-                console.log(`Failed... not found at ${WORLD_FILE}. Empty Data`);
-                const emptyWorld = {"inhabitants": []};
-                res.set("Content-Type", 'application/json');
-                return res.status(200).json(emptyWorld);
+            console.error("Failed...", err);
+            return res.status(500).json({error: "Failed to load..."});
         }
-
-        console.error("Failed to read file", err);
-        return res.status(500).json({error: "Failed World Data"});
-    }
         res.set('Content-Type', 'application/json');
         res.send(data);
     });
@@ -45,10 +38,10 @@ app.post('/update', (req, res) => {
 
 const updatedClient = req.body;
 
-if (updatedClient.action === 'add_inhabitant' && updatedClient.name && updatedClient.occupation && updatedClient.item) {
+if (updatedClient.action === 'add_inhabitant' && updatedClient.name && updatedClient.role) {
     const newInhab = {
         name: updatedClient.name,
-        occupation: updatedClient.occupation,
+        role: updatedClient.role,
         item: updatedClient.item
     };
     worldData.inhabitants.push(newInhab);
@@ -63,12 +56,12 @@ fs.writeFile(WORLD_FILE, Jsonupdated, (writeErr) => {
         console.error("Failed to update written file", writeErr);
         return res.status(500).json({error: "failed to save world data"});
     }
-    res.status(200).json(worldData);
+    res.status(200).json(worldDataNew);
 });
     });
 });
 
 app.listen(PORT, () => {
-    console.log(`Server Running at http://localhost:${PORT}`);
+    console.log(`Server Running at http://localhost${PORT}`);
     console.log(`Static files...`);
 });
