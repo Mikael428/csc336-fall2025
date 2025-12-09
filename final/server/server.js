@@ -14,7 +14,6 @@ app.use(bodyParser.json());
 app.use('/api', scheduleRouter);
 app.use('/api', registrationRouter);
 
-
 app.listen(PORT, () => {
     console.log(`Registration listening on http://localhost${PORT}`);
 })

@@ -45,7 +45,7 @@ useEffect(() => {
       throw new Error(`Failed to load schedule. Server responded with status: ${response.status}`);
   }
   const data = await response.json();
-  setSchedule(testData);
+  setSchedule(data);
   setError(null)
 } catch (err) {
   console.error("Failed to fetch schedule:", err);
