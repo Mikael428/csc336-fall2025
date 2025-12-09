@@ -21,7 +21,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/api', scheduleRouter);
-
 app.use('/api', registrationRouter);
 
 function readRegData() {
