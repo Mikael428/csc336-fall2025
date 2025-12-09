@@ -1,7 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const app = express();
-const guestRoutes = require(".src/routes/")
+const guestRoutes = require(".src/routes/guestRoutes")
 app.use(express.json());
 
 let data = require("./data.json");

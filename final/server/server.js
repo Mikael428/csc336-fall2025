@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 
 import { fileURLToPath } from 'url';
+import scheduleRouter from './scheduleRoutes.js';
 
 const app = express();
 const PORT = 3001;
@@ -17,6 +18,8 @@ const REG_DB_FILE = path.join(__dirname, 'db_registrations.json');
 
 app.use(cors());
 app.use(bodyParser.json());
+
+app.use('/api', scheduleRouter);
 
 function readRegData() {
     try {
