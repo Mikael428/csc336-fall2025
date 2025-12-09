@@ -46,7 +46,7 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
-        <header className="fixed top-0 left-0 w-full bg-gray-900 shadow-xl z-50">
+        <header className="fixed top-0 left-0 w-full bg-indigo-700 shadow-xl z-50">
           <nav className="flex items-center justify-between mx-auto max-w-7xl px-4 py-4">
         
         <div className="flex space-x-6 text-lg font-medium">
