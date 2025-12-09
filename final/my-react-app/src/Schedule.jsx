@@ -36,17 +36,26 @@ function Schedule() {
   const [error, setError] = useState(null);
 
 useEffect(() => {
-  const testData = [
-    { time: "10:00 AM", title: "Test Event 1", location: "Room A" },
-    { time: "11:00 AM", title: "Test Event 2", location: "Room B" },
-    { time: "12:00 PM", title: "Test Event 3", location: "Room C" },
-    { time: "01:00 PM", title: "Test Event 4", location: "Room D" },
-    { time: "02:00 PM", title: "Test Event 5", location: "Room E" },
-    { time: "03:00 PM", title: "Test Event 6", location: "Room F" },
-  ];
+  async function fetchSchedule() {
+  try {
+    const response = await fetch(SCHEDULE_API_URL);
+    if (!response.ok) {
+      throw new Error(`Failed to load schedule. Server responded with status: ${response.status}`);
+  }
+  const data = await response.json();
   setSchedule(testData);
+  setError(null)
+} catch (err) {
+  console.error("Failed to fetch schedule:", err);
+  setError("Could not load schedule.");
+} finally {
   setLoading(false);
+    }
+}
+
+fetchSchedule();
 }, []);
+
 
   if (loading) {
     return (
