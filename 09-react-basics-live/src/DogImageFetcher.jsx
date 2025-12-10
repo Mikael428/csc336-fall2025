@@ -11,13 +11,14 @@ function DogImageFetcher() {
         setError(null);
         setDogImg(null);
         
-        const apiURL = `https://dog.ceo/api/breed/${breed}/images/random`;
+        const apiURL = `https://dog.ceo/api/breed/${breed}/image/random`;
         
         fetch(apiURL)
-        .then(async response => {
+        .then(response => {
             if (!response.ok) {
-                const err = await response.json();
-                throw new Error(err.status_message || `HTTP error!: ${response.status}`);
+                return response.json().then(err => {
+                    throw new Error(err.status_message || `HTTP error!: ${response.status}`);
+                });
             }
             return response.json();
         })

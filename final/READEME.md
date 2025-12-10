@@ -5,4 +5,6 @@ This project is supposed to be a simple website, where you get a home page of an
 
 There are three "pages" in total. You can navigate using the router-header on the top of the page.
 
-I used express, cors, body-parser, react, react-dom, vite and devDependencies (for tools).
+For the schedule page, the 'schedule' and conference image on the page is the data retrival, and on the register page, you can enter your name and email to register for the day. There are restrictions for what is allowed (such as not being able to register the name email more than once).
+
+I used express, cors, body-parser, toast, react, react-dom, vite and devDependencies (for tools).
