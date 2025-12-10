@@ -1,5 +1,6 @@
-import ListItem from "./ListItem";
-import Button from "./Button";
+import React from 'react';
+import ListItem from "./ListItem.js";
+import Button from "./Button.js";
 
 function Home() {
     return(

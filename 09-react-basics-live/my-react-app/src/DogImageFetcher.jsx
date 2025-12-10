@@ -11,7 +11,7 @@ function DogImageFetcher() {
         setError(null);
         setDogImg(null);
         
-        const apiURL = `https://dog.ceo/api/breeds/image/random`;
+        const apiURL = `https://dog.ceo/api/breed/${breed}/image/random`;
         
         fetch(apiURL)
         .then(response => {
@@ -28,6 +28,7 @@ function DogImageFetcher() {
             setLoading(false);
         } else {
             throw new Error('Couldnt fetch');
+        }
         })
         .catch(fetchError => {
             console.error('Fetching Dog data failed', fetchError);
