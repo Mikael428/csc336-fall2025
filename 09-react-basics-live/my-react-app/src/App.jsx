@@ -1,4 +1,3 @@
-import About from './src/about.jsx';
 import "./app.css";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import ListContainer from "./ListContainer.jsx";

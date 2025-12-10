@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import ListItem from '../../src/ListItem';
-import Button from '../../src/Button';
+import ListItem from './ListItem.js';
+import Button from './Button.js';
 
 function ListContainer() {
     const [items, setItems] = useState([
