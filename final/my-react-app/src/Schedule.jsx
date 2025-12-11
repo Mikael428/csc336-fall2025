@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./Schedule.css";
 import Conferenced from "./assets/Conf_Img.jpg"
 
-const SCHEDULE_API_URL = import.meta.env.VITE_SCHEDULE_API_URL || "http://localhost:3001/api/schedule";
+const SCHEDULE_API_URL = "http://localhost:3001/api/schedule";
 
 function ScheduleTable({ rows }) {
     return (

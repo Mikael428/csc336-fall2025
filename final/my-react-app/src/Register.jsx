@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./register.css";
 
-const REGISTER_API_URL = import.meta.env.VITE_REGISTER_API_URL || "http://localhost:3001/api/register";
+const REGISTER_API_URL = "http://localhost:3001/api/register";
 
 function Register() {
     const [name, setName] = useState("");
