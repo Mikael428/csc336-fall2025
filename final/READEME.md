@@ -1,4 +1,4 @@
-My project: https://csc336-fall2025-1-ytfc.onrender.com/Schedule (web_service version)
+My project: https://csc336-fall2025-1-ytfc.onrender.com (web_service version)
 https://csc336-fall2025-2-final.onrender.com (static_version)
 
 This project is supposed to be a simple website, where you get a home page of an organization, then get to see the schedule of events coming up (data retrival with GET /api/schedule) as well as (POST api/register), for the register page, which handles form submission and saves registration records to a local JSON file.
