@@ -8,7 +8,12 @@ import registrationRouter from './registrationRoutes.js';
 const app = express();
 const PORT = 3001;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://csc336-fall2025-2-final.onrender.com",
+  })
+);
+
 app.use(bodyParser.json());
 
 app.use('/api', scheduleRouter);
