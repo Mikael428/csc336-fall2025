@@ -13,3 +13,9 @@ For the schedule page, the 'schedule' and conference image on the page is the da
 
 
 I used express, cors, body-parser, toast, react, react-dom, vite and devDependencies (for tools).
+
+here is an image of the schedule page and how it's supposed to look:
+![alt text](Screenshot_09-12-2025_125446_csc336-fall2025-1-ytfc.onrender.com.jpeg)
+
+here is a video of the register page and how it functions:
+<video controls src="register_record 09-12-25.mp4" title="Title"></video>
