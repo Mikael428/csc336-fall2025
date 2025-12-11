@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./Schedule.css";
 import Conferenced from "./assets/Conf_Img.jpg"
 
-const SCHEDULE_API_URL = "https://csc336-fall2025-2-final.onrender.com/schedule";
+const SCHEDULE_API_URL = "http://localhost:3001/api/schedule";
 
 function ScheduleTable({ rows }) {
     return (
