@@ -10,3 +10,5 @@ const scheduleData = [
 export const getSchedule = (req, res) => {
     res.status(200).json(scheduleData);
 };
+
+export default scheduleData;
