@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
-connectDB();
+// connectDB();
 
 app.use('/api', scheduleRouter);
 app.use('/api', registrationRouter);
