@@ -3,7 +3,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./register.css";
 
-const REGISTER_API_URL = "https://csc336-fall2025-2-api.onrender.com/api/register";
+const REGISTER_API_URL = "http://localhost:3001/api/register";
+
 function Register() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");

@@ -1,11 +1,9 @@
 import express from 'express';
 
-import scheduleData from './scheduleController.js';
+import * as scheduleController from './scheduleController.js';
 
 const router = express.Router();
 
-router.get('/schedule', (req, res) => {
-    res.json(scheduleData);
-});
+router.get('/schedule', scheduleController.getSchedule);
 
 export default router;

@@ -1,8 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Schedule from "./Schedule.jsx";
 import Register from "./Register.jsx";
-import scheduleData from "./Schedule.jsx";
 import viteImage from "./assets/Conference_Image.jpeg";
 
 function Home() {
