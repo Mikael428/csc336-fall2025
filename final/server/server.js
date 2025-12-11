@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import connectDB from './db.js';
+// import connectDB from './db.js';
 
 import scheduleRouter from './scheduleRoutes.js';
 import registrationRouter from './registrationRoutes.js';

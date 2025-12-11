@@ -3,7 +3,7 @@ https://csc336-fall2025-2-final.onrender.com (static_version)
 
 
 (i would then go to final/server then run node server.js for it to load)
-For some reason (probably a mistake on my part), the render website wouldn't let me use the server file and simply "node server.js" to display the information, so you'll have to do that on vs code.
+For some reason (probably a mistake on my part), the render website wouldn't let me use the server file and simply "node server.js" to display the information, so you'll have to do that on vs code. 
 
 This project is supposed to be a simple website, where you get a home page of an organization, then get to see the schedule of events coming up (data retrival with GET /api/schedule) as well as (POST api/register), for the register page, which handles form submission and saves registration records to a local JSON file.
 
