@@ -17,5 +17,5 @@ I used express, cors, body-parser, toast, react, react-dom, vite and devDependen
 here is an image of the schedule page and how it's supposed to look (I got it onto render on my side at the least)
 ![alt text](Screenshot_09-12-2025_125446_csc336-fall2025-1-ytfc.onrender.com.jpeg)
 
-here is a video of the register page and how it functions: (I got it onto render on my side at the least)
+here is a video of the register page and how it functions: (I got it onto render on my side at the least) (file name is "register_record 09-12-25.mp4")
 <video controls src="register_record 09-12-25.mp4" title="Title"></video>
